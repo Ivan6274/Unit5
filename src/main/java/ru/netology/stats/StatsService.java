@@ -4,63 +4,83 @@ package ru.netology.stats;
 import java.util.Arrays;
 
 public class StatsService {
-    public static void main(String[] args) {
+    public int calculateSumSells(String[] args) {
         int[] staticArray = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         for (int i = 0; i < 12; i++) {
 
         }
         System.out.println(Arrays.toString(staticArray));
-        double sumArray = 0;
+        int sumArray = 0;
         for (int i = 0; i < staticArray.length; i++) {
             sumArray += staticArray[i];
-
         }
-        System.out.println("Сумма продаж за год = " + sumArray);
-        float average = (float) (sumArray / staticArray.length);
-        System.out.println("Среднее значение продаж за год = " + average);
+        return sumArray;
+    }
 
+    public int calculateAverageSells(String[] args) {
+        int[] staticArray1 = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int sumArray1 = 0;
+        for (int l = 0; l< staticArray1.length; l++) {
+            sumArray1 += staticArray1[l];
+
+            int averageSells = (sumArray1 / staticArray1.length);
+        }
+        return averageSells;
+    }
+
+
+    public int calculateIndexOfMinSells(String[] args) {
+        int[] staticArray2 = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int indexOfMin = 0;
-        double min = staticArray[0];
-        for (int i = 0; i < staticArray.length; i++) {
-            if (staticArray[i] < staticArray[0]) {
-                min = staticArray[i];
+        double min = staticArray2[0];
+        for (int i = 0; i < staticArray2.length; i++) {
+            if (staticArray2[i] < staticArray2[0]) {
+                min = staticArray2[i];
                 indexOfMin = i + 1;
 
             }
-
+            return indexOfMin;
         }
-        System.out.println("В месяце под номером '" + indexOfMin + "' были Мин продажи равные = " + min);
-
+    }
+    public int calculateIndexOfMaxSells(String[] args) {
+        int[] staticArray3 = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int indexOfMax = 0;
-        double max = staticArray[0];
-        for (int i = 0; i < staticArray.length - 1; i++) {
-            if (staticArray[i] > staticArray[i + 1]) {
-                max = staticArray[i];
+        int max = staticArray3[0];
+        for (int i = 0; i < staticArray3.length - 1; i++) {
+            if (staticArray3[i] > staticArray3[i + 1]) {
+                max = staticArray3[i];
                 indexOfMax = i + 1;
             }
+            return indexOfMax;
 
         }
-        System.out.println("В месяце под номером '" + indexOfMax + "' были Макс продажи равные = " + max);
-
-
-        int minSumSellIndex = 0;
-        for (int i = 0; i < staticArray.length; i++) {
-            if (average > staticArray[i]) {
-                minSumSellIndex++;
-
-            }
-
-        }
-        System.out.println("Количество месяцев с продажами меньше среднего равно = "+ minSumSellIndex);
-
-        int maxSumSellIndex = 0;
-        for (int i = 0; i < staticArray.length; i++) {
-            if (average < staticArray[i]) {
-                maxSumSellIndex++;
-
-            }
-
-        }
-        System.out.println("Количество месяцев с продажами больше среднего равно = "+ maxSumSellIndex);
     }
-}
+
+    public int calculateMinSumSellsIndex(String[] args) {
+                int[] staticArray4 = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+                int minSumSellIndex = 0;
+                int sumArray1 = 0;
+                for (int i = 0; i < staticArray4.length; i++) {
+                    sumArray1 += staticArray4[i];
+
+                    int averageSells = (sumArray1 / staticArray4.length);
+                    for (int j = 0; j < staticArray4.length; j++) {
+                        if (averageSells > staticArray4[j]) {
+                            minSumSellIndex++;
+
+                        }
+                        return minSumSellIndex;
+                    }
+
+
+                    int maxSumSellIndex = 0;
+                    for (int k = 0; k < staticArrayh4.length; k++) {
+                        if (average < staticArray4[k]) {
+                            maxSumSellIndex++;
+
+                        }
+
+                    }
+
+                }
+            }
